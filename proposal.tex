@@ -1,0 +1,98 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage[T1]{fontenc}
+\usepackage{tgtermes}
+\usepackage{geometry}
+
+ \geometry{
+ a4paper,
+ total={210mm,297mm},
+ left=10mm,
+ right=10mm,
+ top=10mm,
+ bottom=10mm,
+  }
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesClass{proposalnsf}[2008/06/01 NSF proposal style v1.3 SGLS]
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
+\ProcessOptions
+\RequirePackage{calc}
+%\RequirePackage{pdffig}
+\RequirePackage{natbib}
+\RequirePackage[american]{babel}
+%\RequirePackage{hyperref}
+\RequirePackage{mathpazo}
+%\RequirePackage{newcent}
+\setlength{\paperheight}{11in}
+\setlength{\paperwidth}{8.5in}
+\addtolength{\voffset}{-1in}
+\addtolength{\hoffset}{-1in}
+\setlength{\topmargin}{1in}
+\setlength{\oddsidemargin}{1in}
+\setlength{\evensidemargin}{1in}
+\setlength{\textwidth}{\paperwidth - 2in}
+\setlength{\textheight}{\paperheight - 2in}
+\setlength{\footskip}{36pt}
+\setlength{\marginparsep}{0.5cm}
+\setlength{\marginparwidth}{1.5cm}
+\setlength{\headheight}{0pt}
+\setlength{\headsep}{0pt}
+\RequirePackage{fancyhdr}
+\pagestyle{fancyplain}
+\renewcommand{\headrulewidth}{0pt}
+\lhead{}
+\chead{}
+\rhead{}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
+\renewcommand*{\bibfont}{\small}
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot[C]{ Page \footnotesize\thepage }
+\fancyfoot[L]{\footnotesize Report}
+\fancyfoot[R]{\footnotesize Sridhar Neelamraju}
+
+
+%\def\@makefnmark{\hbox{$^{\fnsymbol{\@mpfn}}\m@th$}}
+\renewcommand\floatpagefraction{.9}
+
+
+%opening
+\title{ \vspace{-9ex}NiC Fellowship: Annual report (2019)\\\line(1,0){250}}
+\date{\vspace{-11ex}}
+
+
+\begin{document}
+
+\maketitle
+\section{Progress on work packages outlined in the original proposal}
+
+\section{Research highlights from first two years}
+I would first like to highlight the research achievements from the  first two years of the fellowship. 
+\begin{itemize}
+    \item {Article on new developments in the Threshold algorithm (Work Package 4) in the original proposal won the Journal of Chemical Physics Editors' Choice award for 2017.The novel methods outlined in the manuscript enable application of energy landscape exploration method (The threshold algorithm) to complex chemical systems like proteins.}
+    \item{The OPTIM-SBM interface that combines the discrete path sampling methodology developed in Cambridge and Structure Based Model expertise at NCBS was developed.  This enables application of Discrete Path Sampling method to coarse-grained proteins(Work Package??) in original proposal. A proof-of-concept study comparing energy landscapes of a naturally evolved protein versus a designed protein was published in \textit{Journal of  Physical Chemistry B.} (Work Package????)}
+    \item{A new software package called Go-kit was developed from scratch to enable users employ the method developed above for any single-domain protein. The only input needed was the PDBID of the protein. This was published as open-source software in \textit{Journal of Chemical Information and Modeling}. The software was well received and slowly a user base appears to be building.}
+    
+    In the next section, I will outline new developments since moving to Cambridge in January, 2019
+    
+
+\end{itemize}
+\section{A method for studying distant conformational transitions in proteins with complex topologies}
+\subsection{Quasi-Continuous Interpolations coupled to Structure Based Models}
+This enhancement in methodology was tested for very challenging proteins that are difficult to fold with typical molecular dynamics methods.
+\subsection{Application to a model trefoil knot}
+\subsection{Application to a deep trefoil knot}
+\subsection{Application to a Gordian knot}
+\section{Further possibilities}
+\subsection{}
+\section{}
+
+
+\bibliography{peptide}
+\bibliographystyle{unsrt}
+
+\end{document}
