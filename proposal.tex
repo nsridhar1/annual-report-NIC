@@ -5,6 +5,8 @@
 \usepackage[T1]{fontenc}
 \usepackage{tgtermes}
 \usepackage{geometry}
+\usepackage{graphicx}
+
 
  \geometry{
  a4paper,
@@ -68,26 +70,38 @@
 \begin{document}
 
 \maketitle
-\section{Progress on work packages outlined in the original proposal}
-
 \section{Research highlights from first two years}
 I would first like to highlight the research achievements from the  first two years of the fellowship. 
 \begin{itemize}
-    \item {Article on new developments in the Threshold algorithm (Work Package 4) in the original proposal won the Journal of Chemical Physics Editors' Choice award for 2017.The novel methods outlined in the manuscript enable application of energy landscape exploration method (The threshold algorithm) to complex chemical systems like proteins.}
-    \item{The OPTIM-SBM interface that combines the discrete path sampling methodology developed in Cambridge and Structure Based Model expertise at NCBS was developed.  This enables application of Discrete Path Sampling method to coarse-grained proteins(Work Package??) in original proposal. A proof-of-concept study comparing energy landscapes of a naturally evolved protein versus a designed protein was published in \textit{Journal of  Physical Chemistry B.} (Work Package????)}
+    \item {Article on new developments in the Threshold algorithm (Work Package 4 in the original proposal) won the Journal of Chemical Physics Editors' Choice award for 2017. The novel stochastic search methods outlined in the manuscript enable application of energy landscape exploration to complex chemical systems like proteins.}
+    \item{The OPTIM-SBM interface that combines the discrete path sampling methodology developed in Cambridge and Structure Based Model expertise at NCBS was developed.  This enabled application of Discrete Path Sampling method to coarse-grained proteins(Work Package??) in original proposal. A proof-of-concept study comparing energy landscapes of a naturally evolved protein versus a designed protein was published in \textit{Journal of  Physical Chemistry B.} (Work Package????)}
     \item{A new software package called Go-kit was developed from scratch to enable users employ the method developed above for any single-domain protein. The only input needed was the PDBID of the protein. This was published as open-source software in \textit{Journal of Chemical Information and Modeling}. The software was well received and slowly a user base appears to be building.}
-    
     In the next section, I will outline new developments since moving to Cambridge in January, 2019
     
 
 \end{itemize}
-\section{A method for studying distant conformational transitions in proteins with complex topologies}
-\subsection{Quasi-Continuous Interpolations coupled to Structure Based Models}
-This enhancement in methodology was tested for very challenging proteins that are difficult to fold with typical molecular dynamics methods.
+\section{Work performed over the past year (Since Jan,2019)}
+\subsection{Quasi-Continuous Interpolation scheme coupled to Structure Based Models (QCI-SBM)} 
+Over the first six months in Cambridge, I enhaced the OPTIM-SBM interface by adding Quasi-Continuous Interpolations to it. This enhancement in methodology now enables the study of proteins with complex topologies that are not amenable to typical computational chemistry methods like molecular dynamics. Further, with the help of the group at Cambridge, I was able to apply to my problem, a graph traversal algorithm that found distinct paths connecting any two nodes on a disconnectivity graph. As described earlier, a disconnectivity graph is how we represent our database of connected stationary points found for a given protein. In this manner, we are able to find multiple paths connecting any two protein conformations (described as local minima, or, nodes on the disconnectivity graph). 
+
+We tested the methodology on proteins that form complex knots and are difficult to fold.
 \subsection{Application to a model trefoil knot}
+A trefoil knot is the simplest non-trivial knot. The simplest protein that folds into this topology comprises only 92 amino acids (PDB:2EFV). The QCI-SBM  method was applied to this protein to see if results known from literature were reproducible.
+\begin{figure}
+    \centering
+    \includegraphics[]width=10cm{2efv_mukund.png}
+    \caption{Caption}
+    \label{fig:my_label}
+\end{figure}
+
+
 \subsection{Application to a deep trefoil knot}
+A deep trefoil knot is a particularly hard protein to fold with molecular dynamics. Previous studies\cite{Wallin} has a 0\% success rate of finding the native-state of this protein with the C$\alpha$ model description. We show that with QCI-SBM, this challenging protein can be folded. In fact we find multiple pathways with which a deep trefoil knot can form. The most thermodynamically favourable pathway includes very interesting loop-flipping and slip-knotting moves that have not yet been reported in literature. An article describing these results has been drafted and is in the process of being submitted. 
 \subsection{Application to a Gordian knot}
+An even more challenging case is the Gordian knot. Proteins exist in nature that fold into this complex topology. I have now been able to find at least two distinct pathways with which a protein can fold into such a complex topology with the novel QCI-SBM methodology. This work is in its infancy and will take a few months to really understand the nature of the energy landscape of this complex protein.
 \section{Further possibilities}
+In 2016, a completely new class of proteins called entangled proteins were discovered. These included proteins that folded into knots, slip-knots, links and lassos. Folding behaviour of entangled proteins is not at all well understood. The QCI-SBM method is very well-suited for the study of these proteins. Most entangled proteins are not as intricately folded as a Gordian knot. So, a Gordian knot is a very thorough test of the QCI-SBM methodology that allows its application to all types of entangled proteins in the future. 
+
 \subsection{}
 \section{}
 
